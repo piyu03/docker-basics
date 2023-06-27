@@ -1,4 +1,4 @@
-Steps to create docker file
+                                          **Steps to create a docker file**
 1. We decide on the base image on which we want to run our application, here we use python image, so that will have a python environment pre-installed and dont have to worry about installing python.
 
 FROM python:3.8-slim-buster 
@@ -29,10 +29,13 @@ CMD ["python3","/docker_working_dir/app.py"]
 - To build docker image
 
 cd credit_score(where dockerfile is located)
+
 docker build -t app:v1(name your docker image) . 
 
 - To run dockerfile
+  
 docker run -p 80:80 app:v1
 
 - To publish your dockerfile public
+  
 docker push 03piyu(username of your dockerhub)/app:v1
