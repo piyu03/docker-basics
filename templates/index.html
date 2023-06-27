@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+
+<head>
+	<meta charset="UTF-8">
+	<title>ML Deployment using Heroku</title>
+	<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+	<div class="prediction">
+		<h1>Loan Prediction</h1>
+		<form action="{{ url_for('predict')}}" method="post">
+
+			<br>
+			<label for="PAY_3">PAY_3</label>
+			<select id="PAY_3" name="PAY_3" required="required">
+				<option value="0">0</option>
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+			</select>
+			<br>
+			<label for="PAY_2">PAY_2</label>
+			<select id="PAY_2" name="PAY_2" required="required">
+				<option value="0">0</option>
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+			</select>
+			<br>
+			<label for="PAY_1">PAY_1</label>
+			<select id="PAY_1" name="PAY_1" required="required">
+				<option value="0">0</option>
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+			</select>
+			<br>
+			<label for="EDUCATION">EDUCATION</label>
+			<select id="EDUCATION" name="EDUCATION" required="required">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+			</select>
+			<br>
+			<label for="SEX">SEX</label>
+			<select id="SEX" name="SEX" required="required">
+				<option value="2">2</option>
+				<option value="1">1</option>
+			</select>
+			<br>
+			<label for="AGE">AGE </label>
+			<input type="text" id="AGE" name="AGE" required="required">btw:[18-99]
+			<br>
+			<label for="LIMIT_BAL">LIMIT_BAL </label>
+			<input type="text" id="LIMIT_BAL" name="LIMIT_BAL" required="required">btw:[1000-9999999]
+
+			</select>
+			<br>
+			<button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+		</form>
+
+		<br>
+		<b>{{ prediction_text }}</b>
+	</div>
+</body>
+
+</html>
